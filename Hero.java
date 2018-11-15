@@ -11,13 +11,25 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     boolean inAir=true;
-
+    boolean key=false;
+private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
+private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
+private GreenfootImage p3 = new GreenfootImage("p1_walk03.png");
+private GreenfootImage p4 = new GreenfootImage("p1_walk04.png");
+private GreenfootImage p5 = new GreenfootImage("p1_walk05.png");
+private GreenfootImage p6 = new GreenfootImage("p1_walk06.png");
+private GreenfootImage p7 = new GreenfootImage("p1_walk07.png");
+private GreenfootImage p8 = new GreenfootImage("p1_walk08.png");
+private GreenfootImage p9 = new GreenfootImage("p1_walk09.png");
+private GreenfootImage p10 = new GreenfootImage("p1_walk10.png");
+public int frame = 1;
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
+        
     }
 
     @Override
@@ -32,7 +44,7 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-
+        detectPortal();
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
@@ -46,6 +58,7 @@ public class Hero extends Mover {
     {
     setLocation(123,3673);    
     }
+    
     }
     public void handleInput() {
         if (Greenfoot.isKeyDown("up")) {
@@ -60,8 +73,55 @@ public class Hero extends Mover {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("Right")) {
             velocityX = 2;
+            animateRight();
         }
     }
+    public void animateRight()
+    {
+        if(frame == 1)
+        {
+            setImage(p1);
+        }
+         else if(frame == 2)
+        {
+            setImage(p2);
+        }
+         else if(frame == 3)
+        {
+            setImage(p3);
+        }
+         else if(frame == 4)
+        {
+            setImage(p4);
+        }
+         else if(frame == 5)
+        {
+            setImage(p5);
+        }
+         else if(frame == 6)
+        {
+            setImage(p6);
+        }
+         else if(frame == 7)
+        {
+            setImage(p7);
+        }
+         else if(frame == 8)
+        {
+            setImage(p8);
+        }
+         else if(frame == 9)
+        {
+            setImage(p9);
+            frame = 1;
+            return;
+        }
+        frame ++;
+    }
+       
+    
+        
+    
     public String positie()
     {
     String k= "X"+getX()+" "+"Y"+getY();    
@@ -75,14 +135,28 @@ public class Hero extends Mover {
         return getImage().getHeight();
     }
     
-    public void eatKeys()
+    public boolean eatKeys()
     {
         Actor keys = getOneIntersectingObject(Key.class);
         
         if(isTouching(Key.class))
         removeTouching(Key.class);
+        key=true;
+        return key;
     }
     
+    private void detectPortal()
+    {
+        
+        if (key==true)
+        {
+        if(isTouching(DoorLock.class))
+        Greenfoot.setWorld(new Level2());
+    
+   
+    }
+        
+}
     
     
     
