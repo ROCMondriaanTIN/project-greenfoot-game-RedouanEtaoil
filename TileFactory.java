@@ -93,18 +93,18 @@ public class TileFactory {
             tile.isSolid = true;
             break;
             case 19:
-            tile = new Tile("keyYellow.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile = new Key("keyYellow.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid = false;
             break;
             case 20:
-            tile= new Tile("door_closedMid.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+            tile= new DoorLock("door_closedMid.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
             break;
         
         
             case 21:
             tile= new Tile("door_closedTop.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+            tile.isSolid = false;
             break;
             case 22:
             tile= new Tile("cloud3.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -118,9 +118,40 @@ public class TileFactory {
             tile.isSolid= false;
             break;
             case 25:
-            tile = new Tile("cloud1.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new Tile("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 26:
+            tile= new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 27:
+            tile= new Tile("ladder_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid=true;
+            break;
+          
+           
+            
+            case 28:
+            tile= new Tile("stoneCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 29:
+            tile= new LavaTile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
+            case 30:
+            tile= new Tile("bridge.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 31:
+            tile= new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+            
+          
+            
            
             default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

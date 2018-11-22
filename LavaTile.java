@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Key here.
+ * Write a description of class LavaTile here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Key extends Tile
+public class LavaTile extends Tile
 {
     /**
-     * Act - do whatever the Key wants to do. This method is called whenever
+     * Act - do whatever the LavaTile wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public  Key(String image, int width, int height) 
+    public LavaTile(String image, int width, int height) 
     {
-           super(image, width, height);
+        super(image, width, height);
     }    
 }

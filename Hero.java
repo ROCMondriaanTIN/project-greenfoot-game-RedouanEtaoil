@@ -61,7 +61,7 @@ public int frame = 1;
     
     }
     public void handleInput() {
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown("w")) {
             for(Actor Hero:  getIntersectingObjects(Tile.class))
             {
             inAir=true;    
@@ -69,9 +69,9 @@ public int frame = 1;
         }
         }
 
-        if (Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("a")) {
             velocityX = -2;
-        } else if (Greenfoot.isKeyDown("Right")) {
+        } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 2;
             animateRight();
         }
@@ -140,18 +140,31 @@ public int frame = 1;
         Actor keys = getOneIntersectingObject(Key.class);
         
         if(isTouching(Key.class))
+        {
         removeTouching(Key.class);
         key=true;
+    }
         return key;
     }
     
+    private void Lava()
+    {
+        if(isTouching(LavaTile.class))
+        {
+            setLocation(200, 300);
+            
+    
+    }
+}
     private void detectPortal()
     {
         
         if (key==true)
         {
         if(isTouching(DoorLock.class))
-        Greenfoot.setWorld(new Level2());
+        {
+        Greenfoot.setWorld(new MyWorld2());
+    }
     
    
     }
