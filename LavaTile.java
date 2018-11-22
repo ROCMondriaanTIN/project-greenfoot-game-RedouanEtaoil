@@ -1,23 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DoorLock here.
+ * Write a description of class LavaTile here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DoorLock extends Tile
+public class LavaTile extends Tile
 {
     /**
-     * Act - do whatever the DoorLock wants to do. This method is called whenever
+     * Act - do whatever the LavaTile wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public DoorLock(String image, int width,int height ) 
+    public LavaTile(String image, int width, int height) 
     {
         super(image, width, height);
-    }  
-    
-    public void act()
-    {
-    }
+    }    
 }
