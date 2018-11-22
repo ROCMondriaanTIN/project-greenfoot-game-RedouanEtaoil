@@ -12,6 +12,11 @@ public class Hero extends Mover {
     private final double drag;
     boolean inAir=true;
     boolean key=false;
+    boolean key1;
+    boolean detectPortal2=false;
+    int x=125;
+    int y=3673;
+
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
 private GreenfootImage p3 = new GreenfootImage("p1_walk03.png");
@@ -36,6 +41,10 @@ public int frame = 1;
     public void act() {
         handleInput();
         eatKeys();
+        checkpoint();
+        detectPortal1();
+        detectPortal2();
+        lava();
         //positie();
         spikes();
         velocityX *= drag;
@@ -45,18 +54,30 @@ public int frame = 1;
         }
         applyVelocity();
         detectPortal();
+        
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                //getWorld().removeObject(this);
+                setLocation(x,y);
                 break;
             }
         }
     }
-    public void spikes()
+    
+    
+    
+    public void checkpoint()
     {
+    if(isTouching(Checkpoint.class))  {  
+    x=getX();
+    y=getY();
+}
+    }
+    public void spikes()
+   {
     if(isTouching(SpikesTile.class))
     {
-    setLocation(123,3673);    
+    setLocation(x,y);    
     }
     
     }
@@ -70,12 +91,13 @@ public int frame = 1;
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -2;
+            velocityX = -3;
         } else if (Greenfoot.isKeyDown("Right")) {
-            velocityX = 2;
+            velocityX = 3;
             animateRight();
         }
     }
+    
     public void animateRight()
     {
         if(frame == 1)
@@ -117,11 +139,10 @@ public int frame = 1;
             return;
         }
         frame ++;
+    
+    
+     
     }
-       
-    
-        
-    
     public String positie()
     {
     String k= "X"+getX()+" "+"Y"+getY();    
@@ -137,34 +158,81 @@ public int frame = 1;
     
     public boolean eatKeys()
     {
-        Actor keys = getOneIntersectingObject(Key.class);
+        for(Actor keys : getIntersectingObjects(Key.class))
+        {
         
         if(isTouching(Key.class))
+        {
         removeTouching(Key.class);
-        key=true;
-        return key;
+        key= true;
+        
+    }
+    break;
+}
+    return key;
     }
     
     private void detectPortal()
     {
-        
+        for (Actor deur: getIntersectingObjects(DoorLock.class))
+        {
         if (key==true)
         {
-        if(isTouching(DoorLock.class))
-        Greenfoot.setWorld(new Level2());
-    
-   
-    }
-        
+           if(isTouching(DoorLock.class))
+           Greenfoot.setWorld(new MyWorld2());
+           String Active="MyWorld2";
+        }
+        }
+     }
+
+    private void lava()
+    {
+      if(isTouching(lavaTile.class))
+      {
+        setLocation(300, 2900);
+         
+         
+    } 
 }
+
+
+
+ private void detectPortal1()
+    {    
+        if (key==true && isTouching(DoorLock1.class))
+        {
+            setLocation(167,3373);           
+        }
+    }
     
     
+  private void detectPortal2()
+    {    
+        if (key==true && isTouching(DoorLock2.class))
+        {
+            setLocation(510 , 428);           
+        }
+    }
     
+}
+
+
+        
+       
+    
+        
+
+
+
+
+
+     
     
 
+
+
+      
     
-    
-        
-}
+
 
 
