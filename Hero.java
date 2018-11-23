@@ -12,10 +12,10 @@ public class Hero extends Mover {
     private final double drag;
     boolean inAir=true;
     boolean key=false;
-    boolean key1;
+    boolean key2;
     boolean detectPortal2=false;
-    int x=125;
-    int y=3673;
+    int x=165;
+    int y=2537;
 
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -42,9 +42,12 @@ public int frame = 1;
         handleInput();
         eatKeys();
         checkpoint();
-        detectPortal1();
-        detectPortal2();
-        lava();
+        eatKeys2();
+        decectPortal2();
+        detectPortal3();
+        detectPortal4();
+        detectPortal5();
+        Lava();
         //positie();
         spikes();
         velocityX *= drag;
@@ -69,15 +72,16 @@ public int frame = 1;
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
-    x=getX();
-    y=getY();
+    this.x=getX();
+    this.y=getY();
 }
     }
     public void spikes()
    {
     if(isTouching(SpikesTile.class))
     {
-    setLocation(x,y);    
+        
+        setLocation(x,y);
     }
     
     }
@@ -86,14 +90,14 @@ public int frame = 1;
             for(Actor Hero:  getIntersectingObjects(Tile.class))
             {
             inAir=true;    
-            velocityY = -20;
+            velocityY = -16;
         }
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -3;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 3;
+            velocityX = 5;
             animateRight();
         }
     }
@@ -170,14 +174,81 @@ public int frame = 1;
         }
         return key;
     }
-    
-    private void Lava()
+     public boolean eatKeys2()
+    {
+        for(Actor keys : getIntersectingObjects(Key2.class))
+        {
+        
+            if(keys!=null)
+            {
+                removeTouching(Key2.class);
+                key2=true;
+                break;
+            }
+        }
+        return key2;
+    }
+    public boolean Lava()
     {
         if(isTouching(LavaTile.class))
         {
-            setLocation(200, 300);
+            
+            setLocation(x,y);
+            
+            
         }
+        return key2;
     }
+    
+    public boolean decectPortal2()
+    {
+        if(key2==true && isTouching(DoorLock1.class))
+        {
+            setLocation(79 , 2826);
+            key2 =false ; 
+           
+
+        }
+        return key2;
+         
+    }
+    
+    public boolean detectPortal3()
+    {
+     if(key2==true && isTouching(DoorLock2.class))
+     
+     {
+        setLocation(573 , 3212); 
+       key2 = false;
+       
+       
+     }
+        return key2;
+    }
+    
+    public boolean detectPortal4()
+    {
+        if(key2==true && isTouching(DoorLock3.class))
+        
+        {
+            setLocation(573 , 3611);
+            
+        }
+        return key2;
+        
+    }
+    
+    public boolean detectPortal5()
+    {
+    if(key2==true && isTouching(DoorLock4.class))
+    
+    {
+   setLocation(544 , 3700);
+   key2=false;
+    }
+    return key2;
+    }
+    
     
     private void detectPortal()
     {
@@ -192,34 +263,13 @@ public int frame = 1;
         }
      }
 
-    private void lava()
-    {
-      if(isTouching(LavaTile.class))
-      {
-        setLocation(300, 2900);
-             
-             
-        } 
-    }
+   
 
 
 
-    private void detectPortal1()
-    {    
-        if (key==true && isTouching(DoorLock1.class))
-        {
-            setLocation(167,3373);           
-        }
-    }
+  
     
-    
-    private void detectPortal2()
-    {    
-        if (key==true && isTouching(DoorLock2.class))
-        {
-            setLocation(510 , 428);           
-        }
-    }
+  
     
 }
 
