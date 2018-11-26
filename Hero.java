@@ -43,10 +43,12 @@ public int frame = 1;
         eatKeys();
         checkpoint();
         eatKeys2();
-        decectPortal2();
-        detectPortal3();
-        detectPortal4();
-        detectPortal5();
+        Door1();
+        Door2();
+        Door3();
+        Door4();
+        Door5();
+        Door6();
         Lava();
         //positie();
         spikes();
@@ -200,47 +202,69 @@ public int frame = 1;
         return key2;
     }
     
-    public boolean decectPortal2()
-    {
-        if(key2==true && isTouching(DoorLock1.class))
-        {
-            setLocation(79 , 2826);
-            key2 =false ; 
-           
+    
+    
+  
+    
 
-        }
-        return key2;
-         
-    }
-    
-    public boolean detectPortal3()
+    public boolean Door1()
     {
-     if(key2==true && isTouching(DoorLock2.class))
-     
-     {
-        setLocation(573 , 3212); 
-       key2 = false;
-       
-       
-     }
-        return key2;
-    }
+    if(key2==true && isTouching(DoorLock1.class))
     
-    public boolean detectPortal4()
     {
-        if(key2==true && isTouching(DoorLock3.class))
-        
-        {
-            setLocation(573 , 3611);
-            
-        }
-        return key2;
-        
+   setLocation(143 , 3028);
+   key2=false;
+    }
+    return key2;
     }
     
-    public boolean detectPortal5()
+    public boolean Door2()
+    {
+    if(key2==true && isTouching(DoorLock2.class))
+    
+    {
+   setLocation(143 , 3028);
+   key2=false;
+    }
+    return key2;
+    }
+    
+    public boolean Door3()
+    {
+    if(key2==true && isTouching(DoorLock3.class))
+    
+    {
+   setLocation(544 , 3700);
+   key2=false;
+    }
+    return key2;
+    }
+    
+    public boolean Door4()
     {
     if(key2==true && isTouching(DoorLock4.class))
+    
+    {
+   setLocation(544 , 3700);
+   key2=false;
+    }
+    return key2;
+    }
+    
+    public boolean Door5()
+    {
+    if(key2==true && isTouching(DoorLock5.class))
+    
+    {
+   setLocation(544 , 3700);
+   key2=false;
+    }
+    return key2;
+    }
+    
+    public boolean Door6()
+    {
+    if(key2==true && isTouching(DoorLock6.class))
     
     {
    setLocation(544 , 3700);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.1" name="world" tilewidth="129" tileheight="71" tilecount="32" columns="0">
+<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="129" tileheight="71" tilecount="43" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="70" height="70" source="../images/box.png"/>
@@ -96,5 +96,38 @@
  </tile>
  <tile id="31">
   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/liquidLavaTop.png"/>
+ </tile>
+ <tile id="32">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+ <tile id="33">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="34">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+ <tile id="35">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="36">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+ <tile id="37">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="38">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+ <tile id="39">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="40">
+  <image width="70" height="70" source="../images/door_openMid.png"/>
+ </tile>
+ <tile id="41">
+  <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="42">
+  <image width="70" height="70" source="../images/liquidLavaTop_mid.png"/>
  </tile>
 </tileset>
