@@ -13,9 +13,12 @@ public class Hero extends Mover {
     boolean inAir=true;
     boolean key=false;
     boolean key2;
+    boolean key3;
     boolean detectPortal2=false;
+    boolean hendelTile=false;
     int x=165;
     int y=2537;
+   int HendelDeur1 = 0;
 
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -43,6 +46,7 @@ public int frame = 1;
         eatKeys();
         checkpoint();
         eatKeys2();
+        eatKeys3();
         Door1();
         Door2();
         Door3();
@@ -50,10 +54,21 @@ public int frame = 1;
         Door5();
         Door6();
         Lava();
+        
+        Door7();
         //positie();
         spikes();
         velocityX *= drag;
         velocityY += acc;
+        for (Actor enemy: getIntersectingObjects(Highjump.class)){
+    if(enemy !=null){   
+        velocityY = -25;
+        setLocation(getX() +0, getY());
+        
+        break;
+         
+    }
+}
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -67,10 +82,9 @@ public int frame = 1;
                 break;
             }
         }
+        
     }
-    
-    
-    
+   
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
@@ -78,6 +92,7 @@ public int frame = 1;
     this.y=getY();
 }
     }
+   
     public void spikes()
    {
     if(isTouching(SpikesTile.class))
@@ -103,6 +118,7 @@ public int frame = 1;
             animateRight();
         }
     }
+    
     
     public void animateRight()
     {
@@ -149,6 +165,39 @@ public int frame = 1;
     
      
     }
+    
+    public void spring()
+    {
+        
+   if (frame == 1){
+    setImage("springboardDown.png");
+
+    }
+    if (frame == 2){
+    setImage("springboardDown.png");
+
+    }
+          
+   if (frame == 3){
+    setImage("springboardDown.png");
+
+    }
+          
+   if (frame == 4){
+    setImage("springboardUp.png");
+
+    }
+      if (frame == 5){
+    setImage("springboardUp.png");
+
+    }
+      else if (frame == 6){
+    setImage("springboardUp.png");
+    frame =1;
+    return;
+    }
+    frame ++;
+    }
     public String positie()
     {
     String k= "X"+getX()+" "+"Y"+getY();    
@@ -176,6 +225,24 @@ public int frame = 1;
         }
         return key;
     }
+    
+    public boolean eatKeys3()
+    {
+        for(Actor keys : getIntersectingObjects(Key3.class))
+        {
+        
+            if(isTouching(Key3.class))
+            {
+                removeTouching(Key3.class);
+                key3= true;
+                break;
+            }
+        }
+        return key;
+    }
+   
+   
+
      public boolean eatKeys2()
     {
         for(Actor keys : getIntersectingObjects(Key2.class))
@@ -212,7 +279,7 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock1.class))
     
     {
-   setLocation(143 , 3028);
+   setLocation(549 , 3102);
    key2=false;
     }
     return key2;
@@ -223,7 +290,7 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock2.class))
     
     {
-   setLocation(143 , 3028);
+   setLocation(143 , 3102);
    key2=false;
     }
     return key2;
@@ -234,7 +301,7 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock3.class))
     
     {
-   setLocation(544 , 3700);
+   setLocation(549 , 3102);
    key2=false;
     }
     return key2;
@@ -251,12 +318,24 @@ public int frame = 1;
     return key2;
     }
     
+    
+    
+    public boolean Door7()
+    {
+        if(key3==true && isTouching(DoorLock7.class))
+        {
+            setLocation(700,500);
+            
+            
+        }
+        return key3;
+    }
     public boolean Door5()
     {
     if(key2==true && isTouching(DoorLock5.class))
     
     {
-   setLocation(544 , 3700);
+   setLocation(143 , 3102);
    key2=false;
     }
     return key2;
@@ -267,7 +346,7 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock6.class))
     
     {
-   setLocation(544 , 3700);
+   Greenfoot.setWorld(new MyWorld3());
    key2=false;
     }
     return key2;
@@ -285,17 +364,32 @@ public int frame = 1;
            String Active="MyWorld2";
         }
         }
+        
      }
 
+   public boolean door7()
+   {
+       
+    
+    if(hendelTile==true && isTouching(DoorLock9.class))
+    
+    {
+   setLocation(544 , 3700);
    
-
-
-
-  
-    
-  
-    
+    }
+    return hendelTile;
+       
+    }
+ 
 }
+
+
+
+  
+    
+
+    
+
 
 
         

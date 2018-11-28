@@ -1,5 +1,6 @@
 
 
+
 /**
  *
  * @author R. Springer
@@ -129,9 +130,7 @@ public class TileFactory {
             tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
-            case 47:
-            tile = new Tile ("achtergrond.jpg", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid= false;
+          
             case 44:
             tile= new SpikesTile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
@@ -204,6 +203,11 @@ public class TileFactory {
             tile.isSolid= false;
             break;
             
+            case 49:
+            
+            tile= new Tile("bg2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
             case 221:
             tile= new Tile ("ladder_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
@@ -314,12 +318,15 @@ public class TileFactory {
             break;
             
             
-           
+            case 43:
+            tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
             case 46:
             tile= new Tile("tochLit2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
-            case 45:
+            case 47:
             tile= new Tile("tochLit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
@@ -330,8 +337,109 @@ public class TileFactory {
             tile= new Tile("stoneMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid=true;
             break;
-
+            case 50:
+            tile = new Tile("snow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 61:
+            tile = new Tile("snowLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 62:
+            tile = new Tile("snowMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 63:
+            tile = new Tile("snowRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 64:
+            tile = new Tile("snowHalfMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 51:
+            tile = new Tile("snowCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 66:
+            tile = new Highjump ("springboardUp.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 77:
            
+            tile = new Highjump ("springboardUp.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = true;
+            break;
+            case 78:
+           
+            tile = new Tile("switchMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            case 79:
+           
+            tile = new Tile ("switchLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            case 80:
+           
+            tile = new Tile ("switchRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            
+            case 67:
+           
+            tile = new DoorLock7 ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            
+            case 68:
+           
+            tile = new Tile ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            
+            case 69:
+           
+            tile = new DoorLock8 ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            
+           case 70:
+           
+            tile = new Tile ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
+            break;
+            
+           case 72:
+           
+           tile = new DoorLock9 ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+            
+           case 73:
+           
+           tile = new Tile ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+            
+           case 75:
+           
+           tile = new DoorLock10 ("door_openMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+            
+           case 76:
+           
+           tile = new Tile ("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+          
+           case 81:
+           tile= new Key3("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+
+            
            
            
            
