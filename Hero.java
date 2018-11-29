@@ -14,11 +14,15 @@ public class Hero extends Mover {
     boolean key=false;
     boolean key2;
     boolean key3;
+    boolean ster;
+  
     boolean detectPortal2=false;
     boolean hendelTile=false;
     int x=165;
     int y=2537;
+    int springen;
    int HendelDeur1 = 0;
+   int coins= 0;
 
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -47,6 +51,7 @@ public int frame = 1;
         checkpoint();
         eatKeys2();
         eatKeys3();
+        eatKeys4();
         Door1();
         Door2();
         Door3();
@@ -54,8 +59,11 @@ public int frame = 1;
         Door5();
         Door6();
         Lava();
+        ster1();
         
-        Door7();
+        //coin();
+        levels();
+        
         //positie();
         spikes();
         velocityX *= drag;
@@ -63,7 +71,7 @@ public int frame = 1;
         for (Actor enemy: getIntersectingObjects(Highjump.class)){
     if(enemy !=null){   
         velocityY = -25;
-        setLocation(getX() +0, getY());
+        setLocation(getX(), getY());
         
         break;
          
@@ -103,22 +111,22 @@ public int frame = 1;
     
     }
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
+        if (Greenfoot.isKeyDown("up")) {
             for(Actor Hero:  getIntersectingObjects(Tile.class))
             {
             inAir=true;    
-            velocityY = -16;
+            velocityY = -16 + springen;
         }
         }
 
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown("left")) {
             velocityX = -5;
-        } else if (Greenfoot.isKeyDown("d")) {
+        } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 5;
             animateRight();
         }
     }
-    
+   
     
     public void animateRight()
     {
@@ -257,6 +265,11 @@ public int frame = 1;
         }
         return key2;
     }
+    
+    
+    
+    
+    
     public boolean Lava()
     {
         if(isTouching(LavaTile.class))
@@ -366,7 +379,20 @@ public int frame = 1;
         }
         
      }
-
+        
+    public void levels ()
+    {
+    for (Actor deur: getIntersectingObjects(DoorLock7.class))
+        {
+        if (key3==true&&coins==21)
+        {
+           if(isTouching(DoorLock7.class))
+           Greenfoot.setWorld(new MyWorld4());
+           String Active="MyWorld4";
+        }
+        }    
+    }
+     
    public boolean door7()
    {
        
@@ -380,8 +406,42 @@ public int frame = 1;
     return hendelTile;
        
     }
- 
-}
+    
+   public int eatKeys4()
+   
+   {
+          if(isTouching(coin.class))
+          {
+              
+                removeTouching(coin.class);
+                coins++;
+             
+           }
+       
+           return coins;
+        }
+   
+        
+        public void ster1()
+        
+        {
+            if (isTouching(star.class))
+            
+            {
+             removeTouching(star.class);
+             springen= -10;
+            
+            }
+         
+        }
+        
+        
+        
+    }
+
+       
+    
+    
 
 
 

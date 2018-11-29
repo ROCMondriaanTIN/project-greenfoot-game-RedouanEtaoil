@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author R. Springer
  */
-public class MyWorld3 extends World {
+public class MyWorld4 extends World {
 
     private CollisionEngine ce;
     public String Active="MyWorld1";
@@ -14,7 +14,7 @@ public class MyWorld3 extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld3() {
+    public MyWorld4() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
 
@@ -93,8 +93,6 @@ public class MyWorld3 extends World {
 
  
 
-
-
  
 
 
@@ -137,7 +135,7 @@ public class MyWorld3 extends World {
         addObject(ct,0,0);
         
 
-        showText("Level 3", 100, 100);
+        showText("Level 4", 100, 100);
         
         ce = new CollisionEngine(te, camera);
         

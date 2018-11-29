@@ -316,10 +316,14 @@ public class TileFactory {
             tile= new SpikesTile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
+            case 82:
+            tile= new SpikesTile("fireball.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
             
             
             case 43:
-            tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile = new coin("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
             case 46:
@@ -438,6 +442,12 @@ public class TileFactory {
            tile= new Key3("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
            tile.isSolid = false;
            break;
+           
+           case 83:
+           tile= new star("star.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+
 
             
            
