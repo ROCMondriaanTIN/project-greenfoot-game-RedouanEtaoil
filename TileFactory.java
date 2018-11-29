@@ -320,7 +320,14 @@ public class TileFactory {
             tile= new SpikesTile("fireball.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
-            
+            case 84:
+            tile= new Tile("bg3.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 85:
+            tile= new Tile("bg4.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
             
             case 43:
             tile = new coin("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

@@ -61,7 +61,7 @@ public int frame = 1;
         Lava();
         ster1();
         
-        //coin();
+       //coin();
         levels();
         
         //positie();
@@ -333,16 +333,7 @@ public int frame = 1;
     
     
     
-    public boolean Door7()
-    {
-        if(key3==true && isTouching(DoorLock7.class))
-        {
-            setLocation(700,500);
-            
-            
-        }
-        return key3;
-    }
+    
     public boolean Door5()
     {
     if(key2==true && isTouching(DoorLock5.class))
