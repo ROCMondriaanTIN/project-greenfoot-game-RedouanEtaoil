@@ -23,6 +23,7 @@ public class Hero extends Mover {
     int springen;
    int HendelDeur1 = 0;
    int coins= 0;
+   int Gem= 0;
 
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -60,7 +61,8 @@ public int frame = 1;
         Door6();
         Lava();
         ster1();
-        
+        gem();
+        gem2();
        //coin();
         levels();
         
@@ -413,6 +415,35 @@ public int frame = 1;
         }
    
         
+        public void gem()
+        
+        {
+            if(isTouching(Gem.class))
+            
+            {
+                
+                removeTouching(Gem.class);
+                Gem++;
+            }
+            
+            
+            
+        }
+        
+        
+        public void gem2()
+        
+        {
+           if(isTouching(Gem2.class))
+           
+           {
+            setLocation(125, 3613);
+               
+           }
+            
+            
+            
+        }
         public void ster1()
         
         {

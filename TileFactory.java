@@ -296,7 +296,7 @@ public class TileFactory {
             tile= new Tile("window.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
-            case 243:
+            case 74:
             tile= new Tile("castleCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
@@ -324,10 +324,7 @@ public class TileFactory {
             tile= new Tile("bg3.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
-            case 85:
-            tile= new Tile("bg4.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid= true;
-            break;
+           
             
             case 43:
             tile = new coin("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -454,6 +451,26 @@ public class TileFactory {
            tile= new star("star.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
            tile.isSolid = false;
            break;
+           
+           case 85:
+           tile= new Gem2("gemBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+           
+           case 86:
+           tile= new Gem("gemGreen.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+           
+           case 87:
+           tile= new Tile("bg5.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
+           
+           case 88:
+            tile= new Tile("bg6.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
 
 
             
