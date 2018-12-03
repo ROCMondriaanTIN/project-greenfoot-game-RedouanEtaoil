@@ -88,7 +88,7 @@ public int frame = 1;
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 //getWorld().removeObject(this);
-                setLocation(x,y);
+                //setLocation(x,y);
                 break;
             }
         }

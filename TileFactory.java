@@ -148,7 +148,7 @@ public class TileFactory {
             break;
             
              case 31:
-            tile= new Tile("liquidLavaTop_mid.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new LavaTop("liquidLavaTop_mid.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid = false;
             break;
             case 32:
