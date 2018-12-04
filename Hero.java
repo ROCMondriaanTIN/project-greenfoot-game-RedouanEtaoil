@@ -21,10 +21,10 @@ public class Hero extends Mover {
     int x=165;
     int y=2537;
     int springen;
-   int HendelDeur1 = 0;
-   int coins= 0;
-   int Gem= 0;
-
+    int HendelDeur1 = 0;
+    int coins= 0;
+    int Gem= 0;
+    
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
 private GreenfootImage p3 = new GreenfootImage("p1_walk03.png");
@@ -42,6 +42,7 @@ public int frame = 1;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
+        //Greenfoot.playSound("mario.mp3");
         
     }
 
@@ -70,10 +71,12 @@ public int frame = 1;
         spikes();
         velocityX *= drag;
         velocityY += acc;
+        
         for (Actor enemy: getIntersectingObjects(Highjump.class)){
     if(enemy !=null){   
         velocityY = -25;
         setLocation(getX(), getY());
+        
         
         break;
          
@@ -95,6 +98,8 @@ public int frame = 1;
         
     }
    
+    
+  
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
@@ -109,7 +114,10 @@ public int frame = 1;
     {
         
         setLocation(x,y);
+        
     }
+    
+    
     
     }
     public void handleInput() {
@@ -117,14 +125,14 @@ public int frame = 1;
             for(Actor Hero:  getIntersectingObjects(Tile.class))
             {
             inAir=true;    
-            velocityY = -16 + springen;
+            velocityY = -17 + springen;
         }
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -5;
+            velocityX = -4;
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 5;
+            velocityX = 4;
             animateRight();
         }
     }
@@ -274,7 +282,7 @@ public int frame = 1;
     
     public boolean Lava()
     {
-        if(isTouching(LavaTile.class))
+        if(isTouching(lavaTile.class))
         {
             
             setLocation(x,y);
@@ -408,7 +416,7 @@ public int frame = 1;
               
                 removeTouching(coin.class);
                 coins++;
-             
+                Greenfoot.playSound("knife.mp3");
            }
        
            return coins;
@@ -450,8 +458,10 @@ public int frame = 1;
             if (isTouching(star.class))
             
             {
+                
              removeTouching(star.class);
              springen= -10;
+           
             
             }
          

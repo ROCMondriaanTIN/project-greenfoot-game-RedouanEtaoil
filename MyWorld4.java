@@ -137,6 +137,7 @@ public class MyWorld4 extends World {
         addObject(new Enemy(), 1343, 3452);
         CoinTeller ct= new CoinTeller();
         addObject(ct,0,0);
+        addObject(new healthBar(), 1343, 3452);
         
         
 
