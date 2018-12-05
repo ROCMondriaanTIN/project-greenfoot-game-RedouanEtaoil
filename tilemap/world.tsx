@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="1280" tileheight="1000" tilecount="84" columns="0">
+<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="129" tileheight="71" tilecount="81" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="70" height="70" source="../images/box.png"/>
@@ -133,9 +133,6 @@
  <tile id="43">
   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/coinGold.png"/>
  </tile>
- <tile id="49">
-  <image width="660" height="280" source="../images/bg2.png"/>
- </tile>
  <tile id="50">
   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/snow.png"/>
  </tile>
@@ -246,11 +243,5 @@
  </tile>
  <tile id="86">
   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/gemGreen.png"/>
- </tile>
- <tile id="87">
-  <image width="347" height="216" source="../images/bg5.png"/>
- </tile>
- <tile id="88">
-  <image width="1280" height="1000" source="../images/bg6.gif"/>
  </tile>
 </tileset>

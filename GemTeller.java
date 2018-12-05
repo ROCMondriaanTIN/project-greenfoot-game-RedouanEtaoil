@@ -16,6 +16,6 @@ public class GemTeller extends Mover
     List<Hero>myHeroList=this.getWorld().getObjects(Hero.class); 
     Hero myHero=myHeroList.get(0);
     myHero.gem();
-    getWorld().showText("Gems:"+myHero.eatKeys4(),100,80);
+    getWorld().showText("Gems:"+myHero.gem(),100,80);
     }    
 }

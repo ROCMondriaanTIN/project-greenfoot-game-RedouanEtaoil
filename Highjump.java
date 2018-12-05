@@ -22,7 +22,7 @@ public class Highjump extends Tile
     
    public void act(){
      
-   
+  
    if (frame == 1){
     setImage("springboardDown.png");
 
@@ -52,8 +52,9 @@ public class Highjump extends Tile
     }
     frame ++;
     } 
+}
     
-} 
+ 
    
 
     

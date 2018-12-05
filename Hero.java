@@ -10,20 +10,25 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+
+    ScorenBord sb;
+    
     boolean inAir=true;
     boolean key=false;
     boolean key2;
     boolean key3;
     boolean ster;
-  
+    boolean Key4;
     boolean detectPortal2=false;
     boolean hendelTile=false;
+    boolean Criminal=false;
     int x=165;
     int y=2537;
     int springen;
    int HendelDeur1 = 0;
    int coins= 0;
    int Gem= 0;
+   int GemTeller= 0;
 
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -53,6 +58,7 @@ public int frame = 1;
         eatKeys2();
         eatKeys3();
         eatKeys4();
+        key4();
         Door1();
         Door2();
         Door3();
@@ -63,6 +69,15 @@ public int frame = 1;
         ster1();
         gem();
         gem2();
+        gem();
+        door8();
+        resetCriminal();
+        
+        if(sb==null){
+        sb = new ScorenBord();
+        getWorld().addObject(sb,-10,-10);
+        }
+        
        //coin();
         levels();
         
@@ -87,14 +102,28 @@ public int frame = 1;
         
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                //getWorld().removeObject(this);
-                //setLocation(x,y);
+                
+                setLocation(2000,2353);
+                
                 break;
             }
         }
         
     }
    
+  
+    
+    
+   // public void hartjes()
+   // {
+    // for(int i = 0; i < hartje.size();i++) 
+    // {
+       // getWorld().removeObject(hartje.get(i));
+       
+       
+       
+    // }
+// }
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
@@ -107,7 +136,7 @@ public int frame = 1;
    {
     if(isTouching(SpikesTile.class))
     {
-        
+        sb.HartjeEraf();
         setLocation(x,y);
     }
     
@@ -236,6 +265,16 @@ public int frame = 1;
         return key;
     }
     
+    public void enemy()
+    {
+  
+    
+    
+    }
+
+    
+        
+    
     public boolean eatKeys3()
     {
         for(Actor keys : getIntersectingObjects(Key3.class))
@@ -251,8 +290,7 @@ public int frame = 1;
         return key;
     }
    
-   
-
+    
      public boolean eatKeys2()
     {
         for(Actor keys : getIntersectingObjects(Key2.class))
@@ -268,7 +306,39 @@ public int frame = 1;
         return key2;
     }
     
+      public boolean key4()
+    {
+        for(Actor keys : getIntersectingObjects(Key4.class))
+        {
+        
+            if(keys!=null)
+            {
+                removeTouching(Key4.class);
+                Key4=true;
+                break;
+            }
+        }
+        return Key4;
+    }
     
+    
+   
+    public void door8()
+    {
+    for (Actor deur: getIntersectingObjects(DoorLock8.class))
+        {
+        if (Key4==true&&coins==5&&Criminal==true)
+        {
+           if(isTouching(DoorLock8.class))
+           
+           
+           Greenfoot.setWorld(new MyWorld5());
+           String Active="MyWorld5";
+        }
+        
+        }    
+        
+    }
     
     
     
@@ -388,8 +458,7 @@ public int frame = 1;
      
    public boolean door7()
    {
-       
-    
+   
     if(hendelTile==true && isTouching(DoorLock9.class))
     
     {
@@ -415,7 +484,9 @@ public int frame = 1;
         }
    
         
-        public void gem()
+   
+        
+        public int gem()
         
         {
             if(isTouching(Gem.class))
@@ -427,7 +498,7 @@ public int frame = 1;
             }
             
             
-            
+            return Gem;
         }
         
         
@@ -456,11 +527,23 @@ public int frame = 1;
             }
          
         }
+         public void resetCriminal()
+    {
+     if(isTouching(Criminal.class))
+     {
+        removeTouching(Criminal.class);
+       Criminal=true;
+       return;
         
-        
+     }
+     
+     
+     
         
     }
-
+}
+    
+     
        
     
     
