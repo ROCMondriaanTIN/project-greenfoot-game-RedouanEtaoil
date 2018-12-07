@@ -18,7 +18,7 @@ public class MyWorld extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
 
-        this.setBackground("bg.png");
+        this.setBackground("bg10.png");
         int[][] map = {
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -102,6 +102,8 @@ public class MyWorld extends World {
         TileEngine te = new TileEngine(this, 60, 60, map);
         
         Camera camera = new Camera(te);
+        Criminal cr= new Criminal();
+        addObject(cr,125,3613);
         
         Hero hero = new Hero();
         
@@ -112,6 +114,7 @@ public class MyWorld extends World {
         addObject(camera, 0, 0);
         addObject(hero, 125,3673);
         addObject(new Enemy(), 1170, 410);
+        
         
         
 

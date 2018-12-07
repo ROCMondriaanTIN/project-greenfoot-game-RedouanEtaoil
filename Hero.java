@@ -71,7 +71,9 @@ public int frame = 1;
         gem2();
         gem();
         door8();
+        enemy1234();
         resetCriminal();
+        Enemy2();
         
         if(sb==null){
         sb = new ScorenBord();
@@ -82,7 +84,10 @@ public int frame = 1;
         levels();
         
         //positie();
+        if(!Greenfoot.isKeyDown("k"))
+        {
         spikes();
+    }
         velocityX *= drag;
         velocityY += acc;
         for (Actor enemy: getIntersectingObjects(Highjump.class)){
@@ -100,30 +105,36 @@ public int frame = 1;
         applyVelocity();
         detectPortal();
         
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
+        // for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            // if (isTouching(Enemy.class)&&enemy != null) {
+                // velocityX= 40;
+                // //setLocation(2000,2353);
                 
-                setLocation(2000,2353);
-                
-                break;
-            }
-        }
+                // break;
+            // }
+        // }
         
     }
-   
+    
+    public void Enemy2()
+    {
+        if(isTouching(Enemy2.class))
+        {
+         
+           velocityX= 130;
+            
+        }
+        
+        
+    }
   
+    public void enemy1234(){
+    if (isTouching(Enemy.class)) {
+                velocityX= 130;
     
-    
-   // public void hartjes()
-   // {
-    // for(int i = 0; i < hartje.size();i++) 
-    // {
-       // getWorld().removeObject(hartje.get(i));
-       
-       
-       
-    // }
-// }
+    }
+}
+   
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
@@ -483,6 +494,7 @@ public int frame = 1;
            return coins;
         }
    
+        
         
    
         
