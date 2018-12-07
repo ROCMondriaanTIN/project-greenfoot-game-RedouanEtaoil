@@ -143,7 +143,7 @@ public class TileFactory {
        
             
             case 29:
-            tile= new LavaTile("liquidLava.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new lavaTile("liquidLava.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid = false;
             break;
             
@@ -305,7 +305,7 @@ public class TileFactory {
             tile.isSolid=true;
             break;
             case 245:
-            tile= new LavaTile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new lavaTile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid=false;
             break;
             case 246:
