@@ -17,7 +17,7 @@ public class Enemy extends Mover {
         super();
         setImage("blockerSad.png");
         getImage().mirrorHorizontally();
-        walkRange = 140;
+        walkRange = 300;
         firstAct = true;
         speed = 1;
         

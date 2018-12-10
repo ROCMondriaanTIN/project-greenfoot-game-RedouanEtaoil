@@ -72,9 +72,10 @@ public int frame = 1;
         gem2();
         gem();
         door8();
-        enemy1234();
         resetCriminal();
-        Enemy2();
+        jumptile();
+        
+        
         
         if(sb==null){
         sb = new ScorenBord();
@@ -92,7 +93,7 @@ public int frame = 1;
         velocityX *= drag;
         velocityY += acc;
         
-        for (Actor enemy: getIntersectingObjects(Highjump.class)){
+    for (Actor enemy: getIntersectingObjects(Highjump.class)){
     if(enemy !=null){   
         velocityY = -25;
         setLocation(getX(), getY());
@@ -117,29 +118,14 @@ public int frame = 1;
             // }
         // }
         
-    }
     
-    public void Enemy2()
-    {
-        if(isTouching(Enemy2.class))
-        {
-         
-           velocityX= 130;
-            
-        }
-        
-        
-    }
+    
+    
   
-    public void enemy1234(){
-    if (isTouching(Enemy.class)) {
-                velocityX= 130;
     
-    }
-}
    
     
-  
+    } 
     public void checkpoint()
     {
     if(isTouching(Checkpoint.class))  {  
@@ -177,7 +163,7 @@ public int frame = 1;
         }
     }
    
-    
+   
     public void animateRight()
     {
         if(frame == 1)
@@ -383,7 +369,7 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock1.class))
     
     {
-   setLocation(549 , 3102);
+   setLocation(522 , 3102);
    key2=false;
     }
     return key2;
@@ -427,7 +413,7 @@ public int frame = 1;
     
     public boolean Door5()
     {
-    if(key2==true && isTouching(DoorLock5.class))
+    if(key2==true && isTouching(DoorLock6.class))
     
     {
    setLocation(143 , 3102);
@@ -438,7 +424,7 @@ public int frame = 1;
     
     public boolean Door6()
     {
-    if(key2==true && isTouching(DoorLock6.class))
+    if(key2==true && isTouching(DoorLock5.class))
     
     {
    Greenfoot.setWorld(new MyWorld3());
@@ -462,6 +448,27 @@ public int frame = 1;
         
      }
         
+    public void jumptile()
+    
+    {
+             
+    for(Actor enemy: getIntersectingObjects(Enemy.class)){
+    if(enemy !=null){   
+        velocityY = -1;
+        setLocation(getX(), getY());
+        
+        
+        break;
+         
+    }
+}
+        
+        
+        
+        
+        
+        
+    }
     public void levels ()
     {
     for (Actor deur: getIntersectingObjects(DoorLock7.class))
@@ -563,6 +570,8 @@ public int frame = 1;
      
         
     }
+    
+    
 }
     
      

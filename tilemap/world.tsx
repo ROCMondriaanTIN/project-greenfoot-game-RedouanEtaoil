@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="129" tileheight="71" tilecount="81" columns="0">
+<tileset version="1.2" tiledversion="1.2.1" name="world" tilewidth="129" tileheight="71" tilecount="81" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="70" height="70" source="../images/box.png"/>
@@ -200,19 +200,19 @@
   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/keyYellow.png"/>
  </tile>
  <tile id="72">
-  <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openMid.png"/>
+  <image width="70" height="70" source="../images/door_openMid.png"/>
  </tile>
  <tile id="73">
-  <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png"/>
+  <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png"/>
  </tile>
  <tile id="74">
-  <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/castleCenter.png"/>
+  <image width="70" height="70" source="../images/castleCenter.png"/>
  </tile>
  <tile id="75">
-  <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openMid.png"/>
+  <image width="70" height="70" source="../images/door_openMid.png"/>
  </tile>
  <tile id="76">
-  <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png"/>
+  <image width="70" height="70" source="../images/door_openTop.png"/>
  </tile>
  <tile id="77">
   <image width="70" height="70" source="../images/springboardDown.png"/>

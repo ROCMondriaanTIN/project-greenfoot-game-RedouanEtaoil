@@ -93,7 +93,7 @@ public class TileFactory {
             tile= new SpikesTile("spikes.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid = true;
             break;
-            case 19:
+            case 71:
             tile = new Key2("keyYellow.png",  TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid = false;
             break;
@@ -459,20 +459,28 @@ public class TileFactory {
            tile.isSolid = false;
            break;
            
-           case 87:
-           tile= new Tile("bg5.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-           tile.isSolid = false;
-           break;
+           
            
            case 88:
             tile= new Tile("bg6.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
             
-              case 84:
+           case 84:
             tile= new Key4("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
+            
+            case 87:
+            tile= new Tile("stoneMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+            
+            
+            
+            
+            
 
 
             

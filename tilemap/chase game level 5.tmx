@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="120" height="70" tilewidth="70" tileheight="70" infinite="1" nextlayerid="2" nextobjectid="1">
- <tileset firstgid="1" name="world" tilewidth="129" tileheight="71" tilecount="140" columns="0">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="120" height="70" tilewidth="70" tileheight="70" infinite="1" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="world" tilewidth="129" tileheight="71" tilecount="149" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="70" height="70" source="../images/box.png"/>
@@ -201,19 +201,19 @@
    <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Items/keyYellow.png"/>
   </tile>
   <tile id="72">
-   <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openMid.png"/>
+   <image width="70" height="70" source="../images/door_openMid.png"/>
   </tile>
   <tile id="73">
-   <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png"/>
+   <image width="70" height="70" source="../images/door_openTop.png"/>
   </tile>
   <tile id="74">
-   <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/castleCenter.png"/>
+   <image width="70" height="70" source="../images/castleCenter.png"/>
   </tile>
   <tile id="75">
-   <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openMid.png"/>
+   <image width="70" height="70" source="../images/door_openMid.png"/>
   </tile>
   <tile id="76">
-   <image width="70" height="70" source="../../../Desktop/project-greenfoot-game-RedouanEtaoil/platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/door_openTop.png"/>
+   <image width="70" height="70" source="../images/door_openTop.png"/>
   </tile>
   <tile id="77">
    <image width="70" height="70" source="../images/springboardDown.png"/>
@@ -421,6 +421,33 @@
   </tile>
   <tile id="145">
    <image width="70" height="70" source="../images/candyGreen.png"/>
+  </tile>
+  <tile id="146">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stone.png"/>
+  </tile>
+  <tile id="147">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneHalf.png"/>
+  </tile>
+  <tile id="148">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneHalfLeft.png"/>
+  </tile>
+  <tile id="149">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneHalfRight.png"/>
+  </tile>
+  <tile id="150">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneHillLeft2.png"/>
+  </tile>
+  <tile id="151">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneHillRight2.png"/>
+  </tile>
+  <tile id="152">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneLeft.png"/>
+  </tile>
+  <tile id="153">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneMid.png"/>
+  </tile>
+  <tile id="154">
+   <image width="70" height="70" source="../platformerGraphicsDeluxeUpdated/platformerGraphicsDeluxeUpdated/Tiles/stoneRight.png"/>
   </tile>
  </tileset>
  <layer id="1" name="Tilelaag 1" width="120" height="70">
