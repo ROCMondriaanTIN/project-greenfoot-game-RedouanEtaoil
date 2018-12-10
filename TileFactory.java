@@ -461,20 +461,90 @@ public class TileFactory {
            
            
            
-           case 88:
-            tile= new Tile("bg6.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid= false;
-            break;
+           
+           
             
            case 84:
             tile= new Key4("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= false;
             break;
             
+             case 88:
+            tile= new Tile("cakeCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
+            
+           
+            
+            case 107:
+            tile= new Tile("cakeMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+           case 97:
+            tile= new Tile("cakeHalfAltMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+           case 111:
+            tile= new Tile("canePinkSmall.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+           case 114:
+            tile= new Tile("cherry.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+            case 116:
+            tile= new Tile("chocoCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+            case 123:
+            tile= new Tile("chocoHalfAt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+             case 142:
+            tile= new Tile("cupCake.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+             case 141:
+            tile= new Tile("creamVanilla.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 138:
+            tile= new Tile("creamChoco.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            case 139:
+            tile= new Tile("creamMocca.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+           case 140:
+            tile= new Tile("creamPink.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
+             case 134:
+            tile= new Tile("chocoMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= true;
+            break;
+            
             case 87:
             tile= new Tile("stoneMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
