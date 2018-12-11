@@ -12,7 +12,7 @@ public class Hero extends Mover {
     private final double drag;
 
     ScorenBord sb;
-    
+    boolean key5;
     boolean inAir=true;
     boolean key=false;
     boolean key2;
@@ -22,13 +22,15 @@ public class Hero extends Mover {
     boolean detectPortal2=false;
     boolean hendelTile=false;
     boolean Criminal=false;
-    int x=165;
+    int x=165; 
     int y=2537;
     int springen;
     int HendelDeur1 = 0;
     int coins= 0;
     int Gem= 0;
-   int GemTeller= 0;
+    int cherry= 0;
+    int GemTeller= 0;
+   
     
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
 private GreenfootImage p2 = new GreenfootImage("p1_walk02.png");
@@ -74,7 +76,9 @@ public int frame = 1;
         door8();
         resetCriminal();
         jumptile();
-        
+        removeCherry();
+        removeKey5();
+        gameOver();
         
         
         if(sb==null){
@@ -156,9 +160,9 @@ public int frame = 1;
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -4;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 4;
+            velocityX = 5;
             animateRight();
         }
     }
@@ -572,7 +576,50 @@ public int frame = 1;
     }
     
     
+    public int removeCherry()
+    {
+        if(isTouching(cherry.class))
+        {
+           removeTouching(cherry.class); 
+           cherry++;
+        }
+        return cherry;
+    }
+   
+    
+    
+    public void removeKey5()
+    {
+        if(isTouching(key5.class))
+        {
+          removeTouching(key5.class);  
+            
+        }
+        
+        
+        
+    }
+    
+   
+    private void gameOver()
+    {
+        for (Actor deur: getIntersectingObjects(DoorLock11.class))
+        {
+        if (key5==true)
+        {
+           if(isTouching(DoorLock11.class))
+           Greenfoot.setWorld(new Startscherm());
+           String Active="MyWorld5";
+        }
+        }
+    }
 }
+
+           
+        
+        
+  
+
     
      
        

@@ -482,18 +482,18 @@ public class TileFactory {
             break;
             
            case 97:
-            tile= new Tile("cakeHalfAltMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new Tile("cakeHalfAltMid.png", TileEngine.TILE_WIDTH,    TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
             
            case 111:
             tile= new Tile("canePinkSmall.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid= true;
+            tile.isSolid= false;
             break;
             
            case 114:
-            tile= new Tile("cherry.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid= true;
+            tile= new cherry("cherry.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
             break;
             
             case 116:
@@ -502,7 +502,7 @@ public class TileFactory {
             break;
             
             case 123:
-            tile= new Tile("chocoHalfAt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile= new Tile("chocoHalfAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
             tile.isSolid= true;
             break;
             
@@ -538,6 +538,25 @@ public class TileFactory {
             tile.isSolid= true;
             break;
             
+            case 155:
+            tile= new key5("keyYellow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
+            
+            case 122:
+            tile= new Tile("chocoHalf.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
+            
+            case 156:
+            tile= new DoorLock11("door_closedMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
+            
+            case 157:
+            tile= new DoorLock11("door_closedTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid= false;
+            break;
             
             
             
