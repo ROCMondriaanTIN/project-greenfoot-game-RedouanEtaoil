@@ -135,7 +135,8 @@ public class MyWorld3 extends World {
         Camera camera = new Camera(te);
         
         Hero hero = new Hero();
-        
+        Criminal cr= new Criminal();
+        addObject(cr,243,3493);
         
         camera.follow(hero);
 

@@ -19,7 +19,7 @@ public class Enemy extends Mover {
         getImage().mirrorHorizontally();
         walkRange = 300;
         firstAct = true;
-        speed = 1;
+        speed = 3;
         
        
     }
@@ -31,8 +31,8 @@ public class Enemy extends Mover {
 
         if (firstAct) {
             firstAct = false;
-            xMin = x - walkRange / 2;
-            xMax = x + walkRange / 2;
+            xMin = x - walkRange / 1;
+            xMax = x + walkRange / 1;
         }
 
         velocityX = speed;

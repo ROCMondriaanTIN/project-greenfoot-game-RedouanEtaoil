@@ -10,7 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-
+    public String worldName="";
     ScorenBord sb;
     boolean key5;
     boolean inAir=true;
@@ -22,6 +22,7 @@ public class Hero extends Mover {
     boolean detectPortal2=false;
     boolean hendelTile=false;
     boolean Criminal=false;
+    boolean shatkist= false;
     int x=165; 
     int y=2537;
     int springen;
@@ -30,6 +31,7 @@ public class Hero extends Mover {
     int Gem= 0;
     int cherry= 0;
     int GemTeller= 0;
+   
    
     
 private GreenfootImage p1 = new GreenfootImage("p1_walk01.png");
@@ -97,9 +99,9 @@ public int frame = 1;
         velocityX *= drag;
         velocityY += acc;
         
-    for (Actor enemy: getIntersectingObjects(Highjump.class)){
+    for(Actor enemy: getIntersectingObjects(Highjump.class)){
     if(enemy !=null){   
-        velocityY = -25;
+        velocityY = -30;
         setLocation(getX(), getY());
         
         
@@ -273,16 +275,7 @@ public int frame = 1;
         }
         return key;
     }
-    
-    public void enemy()
-    {
-  
-    
-    
-    }
 
-    
-        
     
     public boolean eatKeys3()
     {
@@ -442,7 +435,7 @@ public int frame = 1;
     {
         for (Actor deur: getIntersectingObjects(DoorLock.class))
         {
-        if (key==true)
+        if (key==true && Criminal == true)
         {
            if(isTouching(DoorLock.class))
            Greenfoot.setWorld(new MyWorld2());
@@ -457,9 +450,9 @@ public int frame = 1;
     {
              
     for(Actor enemy: getIntersectingObjects(Enemy.class)){
-    if(enemy !=null){   
-        velocityY = -1;
-        setLocation(getX(), getY());
+     {
+        inAir= true;
+        velocityY = -15 - springen;
         
         
         break;
@@ -477,7 +470,7 @@ public int frame = 1;
     {
     for (Actor deur: getIntersectingObjects(DoorLock7.class))
         {
-        if (key3==true&&coins==21)
+        if (key3==true&&coins==21&&Criminal==true)
         {
            if(isTouching(DoorLock7.class))
            Greenfoot.setWorld(new MyWorld4());
@@ -554,28 +547,23 @@ public int frame = 1;
             {
                 
              removeTouching(star.class);
-             springen= -10;
+             springen= -5;
            
             
             }
          
         }
-         public void resetCriminal()
+  public boolean resetCriminal()
     {
      if(isTouching(Criminal.class))
-     {
-        removeTouching(Criminal.class);
-       Criminal=true;
-       return;
-        
-     }
-     
-     
-     
-        
+    {
+       removeTouching(Criminal.class);
+       shatkist=true;
+       
     }
-    
-    
+    return shatkist;
+
+}
     public int removeCherry()
     {
         if(isTouching(cherry.class))
@@ -592,7 +580,8 @@ public int frame = 1;
     {
         if(isTouching(key5.class))
         {
-          removeTouching(key5.class);  
+          removeTouching(key5.class);
+          key5=true;
             
         }
         
@@ -601,20 +590,69 @@ public int frame = 1;
     }
     
    
-    private void gameOver()
+    private boolean gameOver()
     {
         for (Actor deur: getIntersectingObjects(DoorLock11.class))
         {
-        if (key5==true)
+        if (key5==true && cherry == 24 && isTouching(DoorLock11.class))
         {
-           if(isTouching(DoorLock11.class))
-           Greenfoot.setWorld(new Startscherm());
-           String Active="MyWorld5";
+           Greenfoot.setWorld(new GameOverScherm());
+          
+
         }
-        }
+     
+    } return key;
+    } 
+    
+     public void jumptile2()
+    
+    {
+             
+    for(Actor enemy2: getIntersectingObjects(Enemy2.class)){
+     {
+        inAir= true;
+        velocityY = -20 +springen;
+        
+        
+        
+        break;
+         
     }
 }
+  
 
+
+}
+
+public void removeCriminal()
+    {
+        if(isTouching(Criminal.class)) 
+        {
+            removeTouching(Criminal.class); 
+            if(worldName=="MyWorld")
+            {
+            this.getWorld().addObject(new shatKist(),4039,2539);
+            }
+            
+            if(worldName=="MyWorld1")
+            {
+            this.getWorld().addObject(new shatKist(),5987,1285);
+            }
+            
+            if(worldName=="MyWorld2")
+            {
+            this.getWorld().addObject(new shatKist(),5705,1043);
+            }
+            
+            if(worldName=="MyWorld3")
+            {
+            this.getWorld().addObject(new shatKist(),5440,385);    
+            }
+            return;
+        }
+
+}
+}
            
         
         

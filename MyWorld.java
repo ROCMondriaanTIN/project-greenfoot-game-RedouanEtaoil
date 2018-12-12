@@ -103,7 +103,7 @@ public class MyWorld extends World {
         
         Camera camera = new Camera(te);
         Criminal cr= new Criminal();
-        addObject(cr,125,3613);
+        addObject(cr,384,3553);
         
         Hero hero = new Hero();
         
