@@ -60,7 +60,7 @@ public int frame = 1;
         drag = 0.8;
         setImage("p1.png");
         this.worldName= actieveWereld;
-        //Greenfoot.playSound("mario.mp3");
+        
         
     }
 
@@ -562,7 +562,7 @@ public void checkpoint()
               
                 removeTouching(coin.class);
                 coins++;
-                Greenfoot.playSound("coins.mp3");
+                //Greenfoot.playSound("coins.mp3");
            }
        
            return coins;
@@ -613,7 +613,7 @@ if (isTouching(star.class))
                 
  removeTouching(star.class);
 springen= -5;
-Greenfoot.playSound("jump.mp3");
+//Greenfoot.playSound("jump.mp3");
            
             
 }
