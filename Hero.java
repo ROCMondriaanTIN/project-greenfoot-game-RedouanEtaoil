@@ -11,6 +11,7 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     public String worldName="";
+    
     ScorenBord sb;
     boolean key5;
     boolean inAir=true;
@@ -21,8 +22,9 @@ public class Hero extends Mover {
     boolean Key4;
     boolean detectPortal2=false;
     boolean hendelTile=false;
-    boolean Criminal=false;
-    boolean shatkist= false;
+    boolean Criminal;
+    boolean schatkist;
+    
     int x=165; 
     int y=2537;
     int springen;
@@ -43,14 +45,21 @@ private GreenfootImage p6 = new GreenfootImage("p1_walk06.png");
 private GreenfootImage p7 = new GreenfootImage("p1_walk07.png");
 private GreenfootImage p8 = new GreenfootImage("p1_walk08.png");
 private GreenfootImage p9 = new GreenfootImage("p1_walk09.png");
-private GreenfootImage p10 = new GreenfootImage("p1_walk10.png");
+private GreenfootImage p10= new GreenfootImage("p1_walk10.png");
+
+
+
+
+
+
 public int frame = 1;
-    public Hero() {
+    public Hero(String actieveWereld )  {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
+        this.worldName= actieveWereld;
         //Greenfoot.playSound("mario.mp3");
         
     }
@@ -81,7 +90,9 @@ public int frame = 1;
         removeCherry();
         removeKey5();
         gameOver();
-        
+        schatkist1();
+        applyVelocity();
+        detectPortal();
         
         if(sb==null){
         sb = new ScorenBord();
@@ -109,38 +120,21 @@ public int frame = 1;
          
     }
 }
-        if (velocityY > gravity) {
-            velocityY = gravity;
-        }
-        applyVelocity();
-        detectPortal();
-        
-        // for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            // if (isTouching(Enemy.class)&&enemy != null) {
-                // velocityX= 40;
-                // //setLocation(2000,2353);
-                
-                // break;
-            // }
-        // }
-        
-    
-    
-    
-  
-    
-   
-    
-    } 
-    public void checkpoint()
-    {
+if (velocityY > gravity) {
+ velocityY = gravity;
+}
+
+} 
+public void checkpoint()
+{
     if(isTouching(Checkpoint.class))  {  
     this.x=getX();
     this.y=getY();
 }
-    }
+}
    
-    public void spikes()
+    
+   public void spikes()
    {
     if(isTouching(SpikesTile.class))
     {
@@ -152,17 +146,21 @@ public int frame = 1;
     
     
     }
+    
+    
     public void handleInput() {
         if (Greenfoot.isKeyDown("up")) {
             for(Actor Hero:  getIntersectingObjects(Tile.class))
             {
             inAir=true;    
             velocityY = -17 + springen;
+            Greenfoot.playSound("jump.mp3");
         }
         }
 
         if (Greenfoot.isKeyDown("left")) {
             velocityX = -5;
+            framesLinks();
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 5;
             animateRight();
@@ -215,6 +213,70 @@ public int frame = 1;
     
      
     }
+    
+    public void framesLinks()
+        {
+             if(frame==1)
+            {
+                setImage("p1_links_walk01.png");
+            }
+
+            if(frame==2)
+            {
+                setImage("p1_links_walk02.png");
+            }
+
+            if(frame==3)
+            {
+                setImage("p1_links_walk03.png");
+            }
+            
+            if(frame==4)
+            {
+                setImage("p1_links_walk04.png");
+            }
+    
+            if(frame==5)
+            {
+                setImage("p1_links_walk05.png");  
+            }
+
+            if(frame==6)
+            {
+                setImage("p1_links_walk06.png");
+            }
+
+            if(frame==7)
+            {
+                setImage("p1_links_walk07.png");
+            }
+            
+            if(frame==8)
+            {
+                setImage("p1_links_walk08.png");
+            }
+            
+            if(frame==9)
+            {
+                setImage("p1_links_walk09.png");
+            }
+            
+            if(frame==10)
+            {
+                setImage("p1_links_walk10.png");
+            }
+        
+            if(frame==11)
+            {
+                setImage("p1_links_walk11.png");
+                frame=1;
+                return ;
+            }
+            frame++;
+        }  
+    
+    
+    
     
     public void spring()
     {
@@ -329,7 +391,7 @@ public int frame = 1;
     {
     for (Actor deur: getIntersectingObjects(DoorLock8.class))
         {
-        if (Key4==true&&coins==5&&Criminal==true)
+        if (Key4==true&&coins==5&&Criminal==true && schatkist==true)
         {
            if(isTouching(DoorLock8.class))
            
@@ -356,7 +418,7 @@ public int frame = 1;
         return key2;
     }
     
-    
+   
     
   
     
@@ -366,8 +428,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock1.class))
     
     {
-   setLocation(522 , 3102);
-   key2=false;
+    setLocation(522 , 3102);
+    key2=false;
     }
     return key2;
     }
@@ -377,8 +439,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock2.class))
     
     {
-   setLocation(143 , 3102);
-   key2=false;
+    setLocation(143 , 3102);
+    key2=false;
     }
     return key2;
     }
@@ -388,8 +450,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock3.class))
     
     {
-   setLocation(549 , 3102);
-   key2=false;
+    setLocation(549 , 3102);
+    key2=false;
     }
     return key2;
     }
@@ -399,8 +461,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock4.class))
     
     {
-   setLocation(544 , 3700);
-   key2=false;
+    setLocation(544 , 3700);
+    key2=false;
     }
     return key2;
     }
@@ -413,8 +475,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock6.class))
     
     {
-   setLocation(143 , 3102);
-   key2=false;
+    setLocation(143 , 3102);
+    key2=false;
     }
     return key2;
     }
@@ -424,8 +486,8 @@ public int frame = 1;
     if(key2==true && isTouching(DoorLock5.class))
     
     {
-   Greenfoot.setWorld(new MyWorld3());
-   key2=false;
+    Greenfoot.setWorld(new MyWorld3());
+    key2=false;
     }
     return key2;
     }
@@ -470,7 +532,7 @@ public int frame = 1;
     {
     for (Actor deur: getIntersectingObjects(DoorLock7.class))
         {
-        if (key3==true&&coins==21&&Criminal==true)
+        if (key3==true&&coins==21)
         {
            if(isTouching(DoorLock7.class))
            Greenfoot.setWorld(new MyWorld4());
@@ -500,12 +562,12 @@ public int frame = 1;
               
                 removeTouching(coin.class);
                 coins++;
-                Greenfoot.playSound("knife.mp3");
+                Greenfoot.playSound("coins.mp3");
            }
        
            return coins;
         }
-   
+  
         
         
    
@@ -538,33 +600,55 @@ public int frame = 1;
             
             
             
+      
         }
-        public void ster1()
         
-        {
-            if (isTouching(star.class))
+        
+public void ster1()
+        
+{
+if (isTouching(star.class))
             
-            {
+{
                 
-             removeTouching(star.class);
-             springen= -5;
+ removeTouching(star.class);
+springen= -5;
+Greenfoot.playSound("jump.mp3");
            
             
-            }
+}
+
          
-        }
-  public boolean resetCriminal()
+}
+
+
+  public void resetCriminal()
     {
      if(isTouching(Criminal.class))
     {
        removeTouching(Criminal.class);
-       shatkist=true;
+       Criminal=true;
        
     }
-    return shatkist;
+    
 
 }
-    public int removeCherry()
+
+
+public boolean schatkist1()
+{
+    if(isTouching(Schatkist.class))
+    {
+        removeTouching(Schatkist.class);
+        
+        schatkist=true;
+        
+    }
+    return schatkist;
+}
+
+
+public int removeCherry()
     {
         if(isTouching(cherry.class))
         {
@@ -576,21 +660,20 @@ public int frame = 1;
    
     
     
-    public void removeKey5()
-    {
-        if(isTouching(key5.class))
-        {
-          removeTouching(key5.class);
-          key5=true;
+public void removeKey5()
+{
+if(isTouching(key5.class))
+{
+removeTouching(key5.class);
+key5=true;
             
-        }
+}
         
         
         
     }
     
-   
-    private boolean gameOver()
+   private boolean gameOver()
     {
         for (Actor deur: getIntersectingObjects(DoorLock11.class))
         {
@@ -604,9 +687,9 @@ public int frame = 1;
     } return key;
     } 
     
-     public void jumptile2()
+public void jumptile2()
     
-    {
+{
              
     for(Actor enemy2: getIntersectingObjects(Enemy2.class)){
      {
@@ -624,35 +707,10 @@ public int frame = 1;
 
 }
 
-public void removeCriminal()
-    {
-        if(isTouching(Criminal.class)) 
-        {
-            removeTouching(Criminal.class); 
-            if(worldName=="MyWorld")
-            {
-            this.getWorld().addObject(new shatKist(),4039,2539);
-            }
-            
-            if(worldName=="MyWorld1")
-            {
-            this.getWorld().addObject(new shatKist(),5987,1285);
-            }
-            
-            if(worldName=="MyWorld2")
-            {
-            this.getWorld().addObject(new shatKist(),5705,1043);
-            }
-            
-            if(worldName=="MyWorld3")
-            {
-            this.getWorld().addObject(new shatKist(),5440,385);    
-            }
-            return;
-        }
+
 
 }
-}
+
            
         
         

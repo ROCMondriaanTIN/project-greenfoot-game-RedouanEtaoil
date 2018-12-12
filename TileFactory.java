@@ -459,6 +459,11 @@ public class TileFactory {
            tile.isSolid = false;
            break;
            
+          
+           case 90:
+           tile= new Schatkist("lock_red.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+           tile.isSolid = false;
+           break;
            
            
            
@@ -558,7 +563,10 @@ public class TileFactory {
             tile.isSolid= false;
             break;
             
-            
+            case 124:
+                tile = new Tile("chocoHalfAltMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                break;
             
             
             

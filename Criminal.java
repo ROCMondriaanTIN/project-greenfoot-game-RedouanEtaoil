@@ -16,12 +16,12 @@ public class Criminal extends Mover {
     public boolean ready=false;
     public String actieveWereld="";
 
-    public Criminal() {
+    public Criminal(String actievewereld) {
         super();
         setImage("flyFly1.png");
         walkRange = 7000;
         firstAct = true;
-        speed = 1;
+        speed = 2;
         this.actieveWereld=actieveWereld;
  
     }
